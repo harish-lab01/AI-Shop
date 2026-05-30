@@ -1,0 +1,140 @@
+/* ============================================================
+   ShopMind AI — Design Tokens
+   Dark-Luxury Editorial Design System
+   ============================================================ */
+
+:root {
+  /* ── Surface Colors ── */
+  --color-surface: #111318;
+  --color-surface-dim: #111318;
+  --color-surface-bright: #37393e;
+  --color-surface-container-lowest: #0c0e13;
+  --color-surface-container-low: #191c20;
+  --color-surface-container: #1d2025;
+  --color-surface-container-high: #282a2f;
+  --color-surface-container-highest: #33353a;
+  --color-surface-variant: #33353a;
+  --color-background: #111318;
+
+  /* ── On-Surface Colors ── */
+  --color-on-surface: #e2e2e9;
+  --color-on-surface-variant: #c7c4d7;
+  --color-on-background: #e2e2e9;
+  --color-inverse-surface: #e2e2e9;
+  --color-inverse-on-surface: #2e3036;
+
+  /* ── Outline Colors ── */
+  --color-outline: #908fa0;
+  --color-outline-variant: #464554;
+
+  /* ── Primary ── */
+  --color-primary: #c0c1ff;
+  --color-on-primary: #1000a9;
+  --color-primary-container: #8083ff;
+  --color-on-primary-container: #0d0096;
+  --color-inverse-primary: #494bd6;
+  --color-primary-fixed: #e1e0ff;
+  --color-primary-fixed-dim: #c0c1ff;
+  --color-on-primary-fixed: #07006c;
+  --color-on-primary-fixed-variant: #2f2ebe;
+  --color-surface-tint: #c0c1ff;
+
+  /* ── Secondary ── */
+  --color-secondary: #ffb2b7;
+  --color-on-secondary: #67001b;
+  --color-secondary-container: #b50036;
+  --color-on-secondary-container: #ffc2c4;
+  --color-secondary-fixed: #ffdadb;
+  --color-secondary-fixed-dim: #ffb2b7;
+  --color-on-secondary-fixed: #40000d;
+  --color-on-secondary-fixed-variant: #92002a;
+
+  /* ── Tertiary ── */
+  --color-tertiary: #4edea3;
+  --color-on-tertiary: #003824;
+  --color-tertiary-container: #00885d;
+  --color-on-tertiary-container: #000703;
+  --color-tertiary-fixed: #6ffbbe;
+  --color-tertiary-fixed-dim: #4edea3;
+  --color-on-tertiary-fixed: #002113;
+  --color-on-tertiary-fixed-variant: #005236;
+
+  /* ── Error ── */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  /* ── Typography ── */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Font Sizes */
+  --text-display-lg: 64px;
+  --text-display-lg-mobile: 40px;
+  --text-headline-lg: 32px;
+  --text-headline-lg-mobile: 24px;
+  --text-headline-md: 20px;
+  --text-body-lg: 18px;
+  --text-body-md: 16px;
+  --text-body-sm: 14px;
+  --text-price-lg: 20px;
+  --text-price-sm: 14px;
+  --text-label-caps: 12px;
+
+  /* Font Weights */
+  --weight-display: 700;
+  --weight-headline: 600;
+  --weight-headline-md: 500;
+  --weight-body: 400;
+  --weight-price-lg: 600;
+  --weight-price-sm: 500;
+  --weight-label: 500;
+
+  /* Line Heights */
+  --lh-display: 1.1;
+  --lh-headline: 1.2;
+  --lh-headline-md: 1.4;
+  --lh-body: 1.6;
+  --lh-body-sm: 1.5;
+  --lh-mono: 1.0;
+
+  /* Letter Spacing */
+  --ls-display: -0.02em;
+  --ls-label: 0.05em;
+
+  /* ── Spacing ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+  --space-gutter: 24px;
+  --container-max: 1440px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Glassmorphism ── */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur: 20px;
+
+  /* ── Shadows / Glows ── */
+  --glow-primary: 0 0 20px rgba(192, 193, 255, 0.25);
+  --glow-primary-strong: 0 0 30px rgba(192, 193, 255, 0.4);
+  --glow-tertiary: 0 0 12px rgba(78, 222, 163, 0.5);
+
+  /* ── Transitions ── */
+  --transition-fast: 200ms ease;
+  --transition-base: 400ms ease;
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}

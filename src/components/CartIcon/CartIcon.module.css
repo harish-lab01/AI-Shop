@@ -1,0 +1,29 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  color: var(--color-on-surface);
+  transition: background var(--transition-fast);
+}
+
+.wrapper:hover { background: rgba(255,255,255,0.05); }
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  min-width: 18px;
+  text-align: center;
+  line-height: 1.4;
+}
