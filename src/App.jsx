@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Chatbot from './components/Chatbot/Chatbot';
 import Home from './pages/Home/Home';
 import HomeAnimated from './pages/HomeAnimated/HomeAnimated';
 import FashionApparel from './pages/FashionApparel/FashionApparel';
@@ -10,21 +11,22 @@ import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Checkout from './pages/Checkout/Checkout';
 import Wishlist from './pages/Wishlist/Wishlist';
 import UserDashboard from './pages/UserDashboard/UserDashboard';
+import { useChatbot } from './context/ChatbotContext';
 
-// Pages that use a minimal checkout navbar (no full nav)
 const MINIMAL_NAV_ROUTES = ['/checkout'];
-// Pages that hide the footer
 const NO_FOOTER_ROUTES = ['/checkout', '/dashboard'];
 
-export default function App() {
+function AppInner() {
   const location = useLocation();
+  const { setPage } = useChatbot();
   const isMinimalNav = MINIMAL_NAV_ROUTES.includes(location.pathname);
   const showFooter = !NO_FOOTER_ROUTES.some((r) => location.pathname.startsWith(r));
 
-  // Scroll to top on route change
+  // Scroll to top + tell chatbot which page we're on
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
+    setPage(location.pathname);
+  }, [location.pathname, setPage]);
 
   return (
     <>
@@ -63,6 +65,13 @@ export default function App() {
       </Routes>
 
       {showFooter && <Footer />}
+
+      {/* Global AI Chatbot — always visible */}
+      <Chatbot />
     </>
   );
+}
+
+export default function App() {
+  return <AppInner />;
 }

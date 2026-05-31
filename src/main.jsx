@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
+import { ChatbotProvider } from './context/ChatbotContext';
 import App from './App';
 import './styles/global.css';
 
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <CartProvider>
         <WishlistProvider>
-          <App />
+          <ChatbotProvider>
+            <App />
+          </ChatbotProvider>
         </WishlistProvider>
       </CartProvider>
     </BrowserRouter>
