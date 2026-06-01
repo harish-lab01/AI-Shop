@@ -42,49 +42,11 @@
   font-style: italic;
 }
 
-/* Search */
+/* Search — now handled by SearchBar component */
 .searchWrapper {
-  position: relative;
   max-width: 640px;
   margin: 0 auto var(--space-2xl);
-}
-
-.searchGlow {
-  position: absolute;
-  inset: -4px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-tertiary));
-  border-radius: var(--radius-full);
-  filter: blur(8px);
-  opacity: 0.25;
-  transition: opacity 0.5s ease;
-}
-
-.searchWrapper:focus-within .searchGlow {
-  opacity: 0.5;
-}
-
-.searchBar {
-  position: relative;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  padding: var(--space-md) var(--space-xl);
-  gap: var(--space-md);
-}
-
-.searchInput {
-  background: transparent;
-  border: none;
-  outline: none;
   width: 100%;
-  font-family: var(--font-mono);
-  font-size: var(--text-body-lg);
-  color: var(--color-on-surface);
-}
-
-.searchInput::placeholder {
-  color: var(--color-on-surface-variant);
-  opacity: 0.5;
 }
 
 /* Trending */

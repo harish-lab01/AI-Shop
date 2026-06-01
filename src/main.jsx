@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { ChatbotProvider } from './context/ChatbotContext';
+import { SearchProvider } from './context/SearchContext';
 import App from './App';
 import './styles/global.css';
 
@@ -12,9 +13,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <CartProvider>
         <WishlistProvider>
-          <ChatbotProvider>
-            <App />
-          </ChatbotProvider>
+          <SearchProvider>
+            <ChatbotProvider>
+              <App />
+            </ChatbotProvider>
+          </SearchProvider>
         </WishlistProvider>
       </CartProvider>
     </BrowserRouter>

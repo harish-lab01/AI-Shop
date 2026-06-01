@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import { products } from '../../data/products';
 import styles from './Home.module.css';
 
@@ -14,13 +15,12 @@ const PLACEHOLDERS = [
 
 export default function Home() {
   const [placeholder, setPlaceholder] = useState('');
-  const [searchVal, setSearchVal] = useState('');
-  const pIndexRef = useRef(0);
+  const pIndexRef    = useRef(0);
   const charIndexRef = useRef(0);
   const isDeletingRef = useRef(false);
-  const timerRef = useRef(null);
+  const timerRef     = useRef(null);
 
-  // Typewriter effect
+  // Typewriter for placeholder hint text only
   useEffect(() => {
     const type = () => {
       const current = PLACEHOLDERS[pIndexRef.current];
@@ -78,19 +78,12 @@ export default function Home() {
             That <span className={styles.heroAccent}>Knows You</span>
           </h1>
 
-          {/* Glowing Search Bar */}
+          {/* Live Search Bar */}
           <div className={styles.searchWrapper}>
-            <div className={styles.searchGlow} />
-            <div className={`${styles.searchBar} glass`}>
-              <span className="material-symbols-outlined" style={{ color: 'var(--color-primary)' }}>search</span>
-              <input
-                className={styles.searchInput}
-                placeholder={placeholder}
-                value={searchVal}
-                onChange={(e) => setSearchVal(e.target.value)}
-              />
-              <span className="material-symbols-outlined" style={{ color: 'var(--color-on-surface-variant)', cursor: 'pointer' }}>mic</span>
-            </div>
+            <SearchBar
+              variant="hero"
+              placeholder={placeholder || "Search products, brands, categories..."}
+            />
           </div>
 
           {/* Trending Tags */}
