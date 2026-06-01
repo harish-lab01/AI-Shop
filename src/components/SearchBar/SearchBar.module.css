@@ -132,14 +132,16 @@
   background: #1a1c22;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  overflow: hidden;
-  z-index: 200;
+  z-index: 9000;
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.6),
+    0 24px 60px rgba(0, 0, 0, 0.7),
     0 0 0 1px rgba(192, 193, 255, 0.06);
   animation: dropIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  max-height: 480px;
+  /* Scrollable — max height so it never gets clipped */
+  max-height: 420px;
   overflow-y: auto;
+  overflow-x: hidden;
+  /* Prevent scroll from leaking to page */
   overscroll-behavior: contain;
 }
 
