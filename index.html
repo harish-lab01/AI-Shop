@@ -5,6 +5,25 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShopMind AI | Intelligent Curation</title>
+    <!-- Critical: smooth scroll + no scroll blocking -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        overflow-x: clip;
+        overflow-y: auto;
+        /* GPU-accelerated smooth scroll on all platforms */
+        -webkit-overflow-scrolling: touch;
+      }
+      #root {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

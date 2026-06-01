@@ -12,7 +12,7 @@
   justify-content: center;
   text-align: center;
   padding: 0 var(--space-lg);
-  overflow: hidden;
+  overflow: clip; /* clip not hidden — doesn't trap scroll context */
 }
 
 .heroContent {
@@ -125,7 +125,7 @@
 .ticker {
   padding: var(--space-xl) 0;
   background: var(--color-surface-container-lowest);
-  overflow: hidden;
+  overflow: clip;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -223,7 +223,7 @@
 .aiSection {
   padding: var(--space-3xl) 0;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .aiInner {

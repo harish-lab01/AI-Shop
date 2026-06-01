@@ -9,7 +9,7 @@
   justify-content: center;
   text-align: center;
   padding: 0 var(--space-lg);
-  overflow: hidden;
+  overflow: clip;
 }
 
 .heroContent { max-width: 900px; z-index: 10; width: 100%; }
@@ -109,7 +109,7 @@
 .ticker {
   padding: var(--space-xl) 0;
   background: var(--color-surface-container-lowest);
-  overflow: hidden;
+  overflow: clip;
   border-top: 1px solid rgba(255,255,255,0.05);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -175,7 +175,7 @@
 
 @media (min-width: 1024px) { .productGrid { grid-template-columns: repeat(4, 1fr); } }
 
-.aiSection { padding: var(--space-3xl) 0; position: relative; overflow: hidden; }
+.aiSection { padding: var(--space-3xl) 0; position: relative; overflow: clip; }
 
 .aiInner {
   padding: 0 var(--space-lg);

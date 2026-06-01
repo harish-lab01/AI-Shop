@@ -3,7 +3,9 @@
 .layout {
   padding-top: 80px;
   display: flex;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  /* Never trap scroll in layout container */
+  overflow: visible;
 }
 
 /* Sidebar */
@@ -55,11 +57,12 @@
 
 .navBtnLabel { font-size: var(--text-body-md); }
 
-/* Content */
+/* Content — let the page scroll naturally, not a nested scroll container */
 .content {
   flex: 1;
   padding: var(--space-3xl);
-  overflow-y: auto;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) { .content { margin-left: 256px; } }

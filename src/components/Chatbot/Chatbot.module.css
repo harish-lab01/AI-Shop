@@ -182,6 +182,8 @@
 .msgs {
   flex: 1;
   overflow-y: auto;
+  /* Contain scroll — prevents chat scroll from propagating to page */
+  overscroll-behavior: contain;
   padding: 16px 14px;
   display: flex;
   flex-direction: column;

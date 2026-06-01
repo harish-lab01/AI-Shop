@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Chatbot from './components/Chatbot/Chatbot';
@@ -21,11 +21,13 @@ function AppInner() {
   const { setPage } = useChatbot();
   const isMinimalNav = MINIMAL_NAV_ROUTES.includes(location.pathname);
   const showFooter = !NO_FOOTER_ROUTES.some((r) => location.pathname.startsWith(r));
+  const prevPath = useRef(location.pathname);
 
-  // Scroll to top + tell chatbot which page we're on
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Instant scroll to top on route change (smooth feels sluggish between pages)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setPage(location.pathname);
+    prevPath.current = location.pathname;
   }, [location.pathname, setPage]);
 
   return (
@@ -53,20 +55,23 @@ function AppInner() {
         <Navbar />
       )}
 
-      <Routes>
-        <Route path="/"              element={<Home />} />
-        <Route path="/animated"      element={<HomeAnimated />} />
-        <Route path="/shop"          element={<FashionApparel />} />
-        <Route path="/product/:id"   element={<ProductDetail />} />
-        <Route path="/cart"          element={<ShoppingCart />} />
-        <Route path="/checkout"      element={<Checkout />} />
-        <Route path="/wishlist"      element={<Wishlist />} />
-        <Route path="/dashboard"     element={<UserDashboard />} />
-      </Routes>
+      {/* Page wrapper — key forces remount + fade animation on route change */}
+      <div key={location.pathname} className="page-enter" style={{ flex: 1 }}>
+        <Routes location={location}>
+          <Route path="/"              element={<Home />} />
+          <Route path="/animated"      element={<HomeAnimated />} />
+          <Route path="/shop"          element={<FashionApparel />} />
+          <Route path="/product/:id"   element={<ProductDetail />} />
+          <Route path="/cart"          element={<ShoppingCart />} />
+          <Route path="/checkout"      element={<Checkout />} />
+          <Route path="/wishlist"      element={<Wishlist />} />
+          <Route path="/dashboard"     element={<UserDashboard />} />
+        </Routes>
+      </div>
 
       {showFooter && <Footer />}
 
-      {/* Global AI Chatbot — always visible */}
+      {/* Global AI Chatbot */}
       <Chatbot />
     </>
   );
